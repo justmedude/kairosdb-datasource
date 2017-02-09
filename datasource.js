@@ -28,7 +28,7 @@ function (angular, _, sdk, dateMath, kbn) {
   // Function to check Datasource health
   KairosDBDatasource.prototype.testDatasource = function() {
     return this.backendSrv.datasourceRequest({
-      url: this.url + '/api/v1/health/status',
+      url: this.url + '/api/v1/health/check',
       method: 'GET'
     }).then(function(response) {
       if (response.status === 204) {
